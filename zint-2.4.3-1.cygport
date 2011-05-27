@@ -1,0 +1,21 @@
+inherit qt4-cmake
+
+DESCRIPTION="Multi-format barcode encoder"
+HOMEPAGE="http://sourceforge.net/projects/zint/"
+SRC_URI="mirror://sourceforge/zint/${P}.tar.gz"
+
+PKG_NAMES="zint zint-qt libzint2.4 libzint-devel libQZint2.4 libQZint-devel"
+zint_CONTENTS="usr/bin/zint.exe usr/share/doc/"
+zint_qt_CONTENTS="usr/bin/zint-qt.exe usr/share/applications/ usr/share/pixmaps/"
+libzint2_4_CONTENTS="usr/bin/cygzint-2.4.dll"
+libzint_devel_CONTENTS="usr/include/zint.h usr/lib/libzint.dll.a usr/share/cmake*"
+libQZint2_4_CONTENTS="usr/bin/cygQZint-2.4.dll"
+libQZint_devel_CONTENTS="usr/include/qzint.h usr/lib/libQZint.dll.a"
+
+src_install() {
+	cd ${B}
+	cyginstall
+	doicon ${S}/zint.png
+	make_desktop_entry zint-qt "Zint Barcode Studio" zint "Graphics;Qt"
+}
+DOCS="readme"
