@@ -1,7 +1,0 @@
-category: Graphics KDE
-requires: libQZint2.4 libQtCore4-devel libQtGui4-devel libzint-devel
-external-source: zint
-sdesc: "Multi-format barcode library (Qt development)"
-ldesc: "Zint is a suite of programs to allow easy encoding of data in 
-any of the wide range of public domain barcode standards and to allow 
-integration of this capability into your own programs."

@@ -1,15 +1,28 @@
 inherit qt4-cmake
 
-DESCRIPTION="Multi-format barcode encoder"
+NAME="zint"
+VERSION=2.4.3
+RELEASE=2
+CATEGORY="Graphics"
+SUMMARY="Multi-format barcode encoder"
+DESCRIPTION="Zint is a suite of programs to allow easy encoding of data in
+any of the wide range of public domain barcode standards and to allow
+integration of this capability into your own programs."
 HOMEPAGE="http://sourceforge.net/projects/zint/"
 SRC_URI="mirror://sourceforge/zint/${P}.tar.gz"
 
 PKG_NAMES="zint zint-qt libzint2.4 libzint-devel libQZint2.4 libQZint-devel"
+zint_SUMMARY="${SUMMARY} (command-line utilities)"
 zint_CONTENTS="usr/bin/zint.exe usr/share/doc/"
+zint_qt_SUMMARY="${SUMMARY} (Qt GUI)"
 zint_qt_CONTENTS="usr/bin/zint-qt.exe usr/share/applications/ usr/share/pixmaps/"
+libzint2_4_SUMMARY="${SUMMARY} library (runtime)"
 libzint2_4_CONTENTS="usr/bin/cygzint-2.4.dll"
+libzint_devel_SUMMARY="${SUMMARY} library (development)"
 libzint_devel_CONTENTS="usr/include/zint.h usr/lib/libzint.dll.a usr/share/cmake*"
+libQZint2_4_SUMMARY="Qt ${SUMMARY} library (runtime)"
 libQZint2_4_CONTENTS="usr/bin/cygQZint-2.4.dll"
+libQZint_devel_SUMMARY="Qt ${SUMMARY} library (development)"
 libQZint_devel_CONTENTS="usr/include/qzint.h usr/lib/libQZint.dll.a"
 
 src_install() {
