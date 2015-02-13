@@ -2,18 +2,20 @@ inherit qt4-cmake
 
 NAME="zint"
 VERSION=2.4.3
-RELEASE=2
-CATEGORY="Graphics"
+RELEASE=3
+CATEGORY="Libs"
 SUMMARY="Multi-format barcode encoder"
 DESCRIPTION="Zint is a suite of programs to allow easy encoding of data in
 any of the wide range of public domain barcode standards and to allow
 integration of this capability into your own programs."
 HOMEPAGE="http://sourceforge.net/projects/zint/"
-SRC_URI="mirror://sourceforge/zint/${P}.tar.gz"
+SRC_URI="mirror://sourceforge/zint/zint-${VERSION}.tar.gz"
 
 PKG_NAMES="zint zint-qt libzint2.4 libzint-devel libQZint2.4 libQZint-devel"
+zint_CATEGORY="Graphics"
 zint_SUMMARY="${SUMMARY} (command-line utilities)"
 zint_CONTENTS="usr/bin/zint.exe usr/share/doc/"
+zint_qt_CATEGORY="Graphics"
 zint_qt_SUMMARY="${SUMMARY} (Qt GUI)"
 zint_qt_CONTENTS="usr/bin/zint-qt.exe usr/share/applications/ usr/share/pixmaps/"
 libzint2_4_SUMMARY="${SUMMARY} library (runtime)"
